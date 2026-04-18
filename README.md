@@ -29,7 +29,7 @@ python drone_reply.py
 
 ## Behavior Cloning
 
-This part is for learning the policy from dataset.
+This part is for learning the policy from dataset collected by keyboard.
 
 ### Training
 
@@ -69,6 +69,6 @@ Or eval the state policy:
 python bc_eval.py --ckpt ./bc_checkpoints/bc_state_best.pt
 ```
 
-## Plan:
+## TODO
 
 RL (training from scratch, but with human real-time correction) training pipeline
