@@ -100,8 +100,10 @@ Terminal-1: Run the simulator
 
 Using stable_baselines3 for training
 ```bash
-python train_ppo_stablebaselines.py
+python train_stablebaselines.py
 ```
+
+Note: Here we use PPO, you can change it to other RL methods in stable_baselines3
 
 
 ### PPO Training
@@ -115,6 +117,7 @@ Terminal-2: Using ppo for training
 ```bash
 python PPO_training.py
 ```
+
 
 ### PPO Training with Human Correction
 
