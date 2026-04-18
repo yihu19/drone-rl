@@ -1,8 +1,13 @@
 # Drone-RL
 
 
+## Setup Instruction
 
-## Keyboard control
+
+
+
+
+## Keyboard Control
 
 Terminal-1: Run the simulator
 ```bash
@@ -81,7 +86,10 @@ python bc_eval.py --ckpt ./bc_checkpoints/bc_state_best.pt
 
 
 
-## RL Training via Stable_baselines3
+## RL Training
+
+
+### Training via via Stable_baselines3
 
 Terminal-1: Run the simulator
 ```bash
@@ -94,20 +102,38 @@ python train_ppo_stablebaselines.py
 ```
 
 
-
-## PPO Training
+### PPO Training
 
 Terminal-1: Run the simulator
 ```bash
 ./ProjectAirSim_Blocks/Linux/Blocks.sh
 ```
 
-Using ppo for training
+Terminal-2: Using ppo for training
 ```bash
 python PPO_training.py
 ```
 
+### PPO Training with Human Correction
 
-## TODO
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
 
-RL (training from scratch, but with human real-time correction) training pipeline
+Terminal-2: Using ppo for training
+```bash
+python PPO_training_HF.py --enable-keyboard
+```
+Or with stronger keyboard correction:
+```bash
+python PPO_training.py --enable-keyboard --keyboard-speed 10.0 --keyboard-mode add
+```
+Or if you want the keyboard to fully replace PPO whenever you press keys:
+```bash
+python PPO_training.py --enable-keyboard --keyboard-mode override
+```
+
+### RL Policy Evaluation
+
+
