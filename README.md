@@ -1,19 +1,6 @@
 # Drone-RL
 
 
-## Basic RL training
-
-Terminal-1: Run the simulator
-```bash
-./ProjectAirSim_Blocks/Linux/Blocks.sh
-```
-
-Using stable_baselines3 for training
-```bash
-python train_ppo_stablebaselines.py
-```
-
-
 
 ## Keyboard control
 
@@ -93,7 +80,22 @@ python bc_eval.py --ckpt ./bc_checkpoints/bc_state_best.pt
 ```
 
 
-## PPO
+
+## RL Training via Stable_baselines3
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Using stable_baselines3 for training
+```bash
+python train_ppo_stablebaselines.py
+```
+
+
+
+## PPO Training
 
 Terminal-1: Run the simulator
 ```bash
