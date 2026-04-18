@@ -1,6 +1,12 @@
 # Drone-RL
 
-Train_ppo.py for training drone with stablebaseline ppo
+
+## Basic RL training
+Using stable_baselines3 for training
+```bash
+python train_ppo.py
+```
+
 
 
 ## Keyboard control
