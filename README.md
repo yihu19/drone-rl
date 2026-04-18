@@ -3,7 +3,9 @@
 
 ## Setup Instruction
 
+The code is running based on [ProjectAirSim](https://github.com/iamaisim/ProjectAirSim/tree/main).
 
+Please check the instruction for [pre-built binary environment](https://github.com/iamaisim/ProjectAirSim/blob/main/docs/development/use_prebuilt.md).
 
 
 
