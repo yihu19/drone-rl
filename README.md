@@ -8,6 +8,8 @@ The code is running based on [ProjectAirSim](https://github.com/iamaisim/Project
 Please check the instruction for [pre-built binary environment](https://github.com/iamaisim/ProjectAirSim/blob/main/docs/development/use_prebuilt.md).
 
 
+Please clone the [ProjectAirSim](https://github.com/iamaisim/ProjectAirSim/tree/main).
+Then put this folder under ProjectAirSim
 
 ## Keyboard Control
 
