@@ -23,6 +23,7 @@ HDF5 layout (per episode)
 
 import asyncio
 import datetime
+import math
 import os
 import sys
 import threading
@@ -32,6 +33,7 @@ import cv2
 import h5py
 import numpy as np
 import projectairsim
+from projectairsim.types import Pose, Vector3, Quaternion
 from projectairsim.utils import unpack_image
 
 try:
@@ -47,10 +49,18 @@ _SIM_CONFIG_PATH = os.path.join(
     "..", "client", "python", "example_user_scripts", "sim_config",
 )
 _SCENE_NAME = "scene_basic_drone.jsonc"
-SPEED       = 3.0    # m/s
-LOOP_HZ     = 10
-SAVE_DIR    = "./data/drone_demos"
+SPEED        = 3.0    # m/s
+LOOP_HZ      = 10
+SAVE_DIR     = "./data/drone_demos"
 IMG_H, IMG_W = 480, 640
+
+# Spawn pose from scene_basic_drone.jsonc: xyz="-1.0 8.0 -4.0", rpy-deg="0 0 -45"
+_yaw = math.radians(-45)
+_SPAWN_POSE = Pose({
+    "translation": Vector3({"x": -1.0, "y": 8.0, "z": -4.0}),
+    "rotation": Quaternion({"w": math.cos(_yaw / 2), "x": 0.0,
+                            "y": 0.0, "z": math.sin(_yaw / 2)}),
+})
 
 # ── Keyboard state ───────────────────────────────────────────────────────────
 _keys_held    = set()
@@ -199,6 +209,18 @@ async def main():
                     is_recording = False
                     print(f"  ■ {recorder.n_steps} steps — saving…")
                     recorder.save(SAVE_DIR)
+                    # Return to spawn so the next episode starts from the same position
+                    print("  Returning to spawn…")
+                    try:
+                        drone.disarm()
+                    except Exception:
+                        pass
+                    drone.set_pose(_SPAWN_POSE, True)
+                    drone.enable_api_control()
+                    drone.arm()
+                    await (await drone.takeoff_async())
+                    t_prev = time.time()   # reset timer so first dt is not inflated
+                    print("  Ready — press P to start next episode")
 
             # Velocity command from keyboard
             vn = ve = vd = 0.0
