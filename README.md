@@ -2,11 +2,25 @@
 
 Train_ppo.py for training drone with stablebaseline ppo
 
-drone_keyboard.py for controlling the drone using keyboard
+
+## Keyboard control
+Controlling the drone using keyboard
+```bash
+python drone_keyboard.py
+```
+
+## Dataset Collection
+Collect the dataset using keyboard, saving the state and image into hdf5 format
+```bash
+python drone_collect.py
+```
+
+Reply and check episodes in the simulator
+```bash
+python drone_reply.py
+```
 
 
 ## Plan:
-
-Dataset collection pipeline
 
 ML training pipeline
