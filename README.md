@@ -2,6 +2,12 @@
 
 
 ## Basic RL training
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
 Using stable_baselines3 for training
 ```bash
 python train_ppo.py
@@ -10,13 +16,25 @@ python train_ppo.py
 
 
 ## Keyboard control
-Controlling the drone using keyboard
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Terminal-2: Controlling the drone using keyboard
 ```bash
 python drone_keyboard.py
 ```
 
 ## Dataset Collection
-Collect the dataset using keyboard, saving the state and image into hdf5 format
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Terminal-2: Collect the dataset using keyboard, saving the state and image into hdf5 format
 ```bash
 python drone_collect.py
 ```
@@ -59,7 +77,12 @@ python bc_train.py \
 
 ### Eval
 
-Eval the vision policy:
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Terminal-2: Eval the vision policy:
 ```bash
 python bc_eval.py --ckpt ./bc_checkpoints/bc_vision_best.pt
 ```
