@@ -121,7 +121,7 @@ python PPO_training.py
 ```
 
 
-### PPO Training with Human Correction
+### PPO Training with Human Real-Time Correction
 
 Terminal-1: Run the simulator
 ```bash
