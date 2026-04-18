@@ -10,7 +10,7 @@ Terminal-1: Run the simulator
 
 Using stable_baselines3 for training
 ```bash
-python train_ppo.py
+python train_ppo_stablebaselines.py
 ```
 
 
@@ -91,6 +91,20 @@ Or eval the state policy:
 ```bash
 python bc_eval.py --ckpt ./bc_checkpoints/bc_state_best.pt
 ```
+
+
+## PPO
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Using ppo for training
+```bash
+python PPO_training.py
+```
+
 
 ## TODO
 
