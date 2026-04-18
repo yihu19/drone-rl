@@ -151,3 +151,18 @@ Terminal-2: run the evaluation
 python PPO_eval.py --ckpt ./ppo_custom_checkpoints/ppo_actor.pt
 ```
 
+
+## Drawn Path Following
+
+Draw your path, then drone moves along the drawn path
+
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Terminal-2: run the evaluation
+```bash
+python draw_trajectory.py
+```
+
