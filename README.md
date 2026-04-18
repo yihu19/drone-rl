@@ -136,6 +136,15 @@ Or if you want the keyboard to fully replace PPO whenever you press keys:
 python PPO_training.py --enable-keyboard --keyboard-mode override
 ```
 
-### RL Policy Evaluation
+### Evaluation for PPO
 
+Terminal-1: Run the simulator
+```bash
+./ProjectAirSim_Blocks/Linux/Blocks.sh
+```
+
+Terminal-2: run the evaluation
+```bash
+python PPO_eval.py --ckpt ./ppo_custom_checkpoints/ppo_actor.pt
+```
 

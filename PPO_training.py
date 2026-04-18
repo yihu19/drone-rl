@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser(description="Custom PPO for ProjectAirSim Drone
 parser.add_argument("--gamma", type=float, default=0.99, help="discount factor")
 parser.add_argument("--seed", type=int, default=0, help="random seed")
 parser.add_argument("--log-interval", type=int, default=10, help="log interval")
-parser.add_argument("--episodes", type=int, default=100, help="number of training episodes")
+parser.add_argument("--episodes", type=int, default=50, help="number of training episodes")
 parser.add_argument("--max-steps", type=int, default=300, help="max steps per episode")
 parser.add_argument("--actor-lr", type=float, default=1e-4, help="actor learning rate")
 parser.add_argument("--critic-lr", type=float, default=3e-4, help="critic learning rate")
