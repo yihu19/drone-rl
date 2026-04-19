@@ -93,7 +93,7 @@ python bc_eval.py --ckpt ./bc_checkpoints/bc_state_best.pt
 ## RL Training
 
 
-### Training via via Stable_baselines3
+### Training via Stable_baselines3
 
 Terminal-1: Run the simulator
 ```bash
@@ -134,11 +134,11 @@ python PPO_training_HF.py --enable-keyboard
 ```
 Or with stronger keyboard correction:
 ```bash
-python PPO_training.py --enable-keyboard --keyboard-speed 10.0 --keyboard-mode add
+python PPO_training_HF.py --enable-keyboard --keyboard-speed 10.0 --keyboard-mode add
 ```
 Or if you want the keyboard to fully replace PPO whenever you press keys:
 ```bash
-python PPO_training.py --enable-keyboard --keyboard-mode override
+python PPO_training_HF.py --enable-keyboard --keyboard-mode override
 ```
 
 ### Evaluation for PPO
